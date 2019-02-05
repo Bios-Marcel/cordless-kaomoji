@@ -70,15 +70,14 @@ function onMessageSend(message) {
     //cats
     message = replaceKaomojiCode(message, ";cat;", "(=⌒‿‿⌒=)");
 
-    //Escape backticks, since they are part of markdown
-    message = message.replace(/[`]/g, "\\`");
-
     return message;
 }
 
 function replaceKaomojiCode(message, code, kaomoji) {
     codeEscaped = escapeRegExp(code)
-    return message.replace(new RegExp(codeEscaped, 'g'), kaomoji)
+    //Escape backticks, since they are part of markdown
+    kaomojiEscaped = kaomoji.split("`").join("\\`")
+    return message.replace(new RegExp(codeEscaped, 'g'), kaomojiEscaped)
 }
 
 function escapeRegExp(text) {
