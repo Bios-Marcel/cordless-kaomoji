@@ -89,5 +89,9 @@ function onMessageSend(message) {
     message = message
         .split(";cat;").join("(=⌒‿‿⌒=)");
 
+    //Escape backticks, since they are part of markdown
+    message = message
+        .split("`").join("\\`");
+
     return message;
 }
