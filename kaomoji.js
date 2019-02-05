@@ -43,7 +43,7 @@ function onMessageSend(message) {
 
     //indifference
     message = message
-        .split(";shrug;").join("¯\_(ツ)_/¯")
+        .split(";shrug;").join("¯\\_(ツ)_/¯")
         .split(";iamout;").join("ᕕ( ᐛ )ᕗ");
 
     //confused
