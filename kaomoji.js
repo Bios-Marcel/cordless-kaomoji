@@ -76,9 +76,12 @@ function onMessageSend(message) {
 
 function replaceKaomojiCode(message, code, kaomoji) {
     codeEscaped = escapeRegExp(code)
-    //Escape backticks, since they are part of markdown
-    kaomojiEscaped = kaomoji.split("`").join("\\`")
+    kaomojiEscaped = escapeMarkdown(kaomoji)
     return message.replace(new RegExp(codeEscaped, 'g'), kaomojiEscaped)
+}
+
+function escapeMarkdown(text) {
+    return text.replace(new RegExp("[_`~*]"), "\\$&" )
 }
 
 function escapeRegExp(text) {
