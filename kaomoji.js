@@ -47,7 +47,8 @@ function onMessageSend(message) {
     //suprised
     message = replaceKaomojiCode(message, ";wow;", "w(°ｏ°)w")
     message = replaceKaomojiCode(message, ";oof;", "(⊙_⊙)")
-
+    message = replaceKaomojiCode(message, ";owo;", "(。O ω O。)")
+    message = replaceKaomojiCode(message, ";owo2;", "( ͡o ω ͡o )")
     //greeting
     message = replaceKaomojiCode(message, ";hey;", "＼(⌒▽⌒)")
     message = replaceKaomojiCode(message, ";oiii;", "(≧▽≦)/")
@@ -77,11 +78,11 @@ function onMessageSend(message) {
 function replaceKaomojiCode(message, code, kaomoji) {
     codeEscaped = escapeRegExp(code)
     kaomojiEscaped = escapeMarkdown(kaomoji)
-    return message.replace(new RegExp(codeEscaped, 'g'), kaomojiEscaped)
+    return message.replace(new RegExp(codeEscaped, "gm"), kaomojiEscaped)
 }
 
 function escapeMarkdown(text) {
-    return text.replace(new RegExp("[_`~*]"), "\\$&" )
+    return text.replace(new RegExp("[_`~*]", "g"), "\\$&")
 }
 
 function escapeRegExp(text) {
