@@ -49,6 +49,7 @@ function onMessageSend(message) {
     message = replaceKaomojiCode(message, ";oof;", "(⊙_⊙)")
     message = replaceKaomojiCode(message, ";owo;", "(。O ω O。)")
     message = replaceKaomojiCode(message, ";owo2;", "( ͡o ω ͡o )")
+
     //greeting
     message = replaceKaomojiCode(message, ";hey;", "＼(⌒▽⌒)")
     message = replaceKaomojiCode(message, ";oiii;", "(≧▽≦)/")
@@ -71,6 +72,10 @@ function onMessageSend(message) {
 
     //cats
     message = replaceKaomojiCode(message, ";cat;", "(=⌒‿‿⌒=)")
+
+    //misc
+    message = replaceKaomojiCode(message, ";salute;", "(￣^￣)ゞ")
+    message = replaceKaomojiCode(message, ";glasses;", "(⌐■_■)")
 
     return message
 }
